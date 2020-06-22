@@ -67,9 +67,16 @@ const handleAlert = ({type,text}) =>{
 
 //Clear  all items
 const clearItems = () =>{
-console.log("cleared all items");
-}
+setExpenses([]);
 
+}
+const handleEdit = (id) =>{
+  console.log("cleared all items"+id);
+  }
+
+const handleDelete = (id) =>{
+  console.log("cleared all items"+id);
+  }
   return (
     <>
 { alert.show && <Alert type={alert.type} text={alert.text} />}
@@ -85,7 +92,7 @@ console.log("cleared all items");
 
          />
 
-        <ExpenseList  expenses={expenses} />
+        <ExpenseList handleDelete={handleDelete} handleEdit={handleEdit} clearItems={clearItems} expenses={expenses} />
       </main>
 <h1>Total Spending:
   <span className="total">
