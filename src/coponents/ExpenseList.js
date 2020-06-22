@@ -7,7 +7,7 @@ const ExpenseList = ({expenses,clearItems,handleEdit,handleDelete}) => {
         <>
         <ul className="list">
         { expenses.map(item =>{
-                 return    <ExpenseItem  
+                 return   <ExpenseItem  
                  key={item.id} 
                  handleDelete={handleDelete}
                 handleEdit={handleEdit}

@@ -68,6 +68,9 @@ const handleAlert = ({type,text}) =>{
 //Clear  all items
 const clearItems = () =>{
 setExpenses([]);
+handleAlert({
+  type:"danger",text:`all items deleted`
+});
 
 }
 const handleEdit = (id) =>{
@@ -75,7 +78,12 @@ const handleEdit = (id) =>{
   }
 
 const handleDelete = (id) =>{
-  console.log("cleared all items"+id);
+  
+  let tempExpenses = expenses.filter(item => item.id  !== id);
+  setExpenses(tempExpenses);
+  handleAlert({
+    type:"danger",text:`item deleted`
+  });
   }
   return (
     <>
