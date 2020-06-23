@@ -1,7 +1,7 @@
 import React from 'react';
 import {MdSend} from "react-icons/md";
 
-const ExprenseForm = ({charge,amount,handleAmount,handleCharge,handleSubmit}) => {
+const ExprenseForm = ({charge,amount,handleAmount,handleCharge,handleSubmit,edit}) => {
     return (
         <form onSubmit={handleSubmit}>
            <div className="form-center">
@@ -30,7 +30,7 @@ const ExprenseForm = ({charge,amount,handleAmount,handleCharge,handleSubmit}) =>
                </div>
            </div>
            <button type="submit" className="btn ">
-               Submit <MdSend className="btn-icon" />
+    {edit?"Edit":"Submit"} <MdSend className="btn-icon" />
            </button>
         </form>
     );
